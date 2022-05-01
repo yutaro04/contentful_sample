@@ -6,13 +6,13 @@ import styles from '../styles/Home.module.scss';
 export default function BlogId({ blog }) {
   return (
     <main className={styles.main}>
-      <img src={blog.fields.main_images[0].fields.file.url} />
+      <img src={`${blog.fields.main_images[0].fields.file.url}?w=800&h=300`} />
       <h1 className={styles.title}>{blog.fields.title}</h1>
       <p className={styles.publishedAt}>{blog.publishedAt}</p>
       <div>{documentToReactComponents(blog.fields.content,{
         renderNode: {
           [BLOCKS.EMBEDDED_ASSET]: node => (
-            <video
+            <img
               src={'https:' + node.data.target.fields.file.url}
               width={400}
               height={300}

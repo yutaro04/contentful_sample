@@ -9,7 +9,7 @@ export default function Home({ blogs}) {
       <ul>
         {blogs.map((blog) => (
           <li key={blog.sys.id} className={styles.blog}>
-            <img src={blog.fields.thumbnail.fields.file.url} />
+            <img src={`${blog.fields.thumbnail.fields.file.url}?w=200&h=100`} />
             <Link href={`/blog/${blog.sys.id}`}>
               <a>{blog.fields.title}</a>
             </Link>
