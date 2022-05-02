@@ -1,6 +1,7 @@
 import { client } from '../../libs/client';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS } from '@contentful/rich-text-types'
+import { FacebookIcon, FacebookShareButton} from 'react-share';
 import styles from '../styles/Home.module.scss';
 
 export default function BlogId({ blog }) {
@@ -20,6 +21,10 @@ export default function BlogId({ blog }) {
           )
         }
       })}</div>
+      {console.log}
+      <FacebookShareButton url="https://contentful-sample.vercel.app/" title={blog.fields.title}>
+        <FacebookIcon size={50} round/>
+      </FacebookShareButton>
     </main>
   );
 }
